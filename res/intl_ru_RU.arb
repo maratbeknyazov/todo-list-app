@@ -1,0 +1,1243 @@
+{
+  "@@last_modified": "2019-06-28T15:08:05.980030",
+  "appName": "Список дел",
+  "@appName": {
+    "description": "app的名字",
+    "type": "text",
+    "placeholders": {}
+  },
+  "tryToSearch": "Попробуйте найти по названию или содержанию",
+  "@tryToSearch": {
+    "description": "试试搜一下标题、内容吧",
+    "type": "text",
+    "placeholders": {}
+  },
+  "searchIcon": "Поиск иконки по названию",
+  "@searchIcon": {
+    "description": "搜索图标名字",
+    "type": "text",
+    "placeholders": {}
+  },
+  "myAccount": "Мой аккаунт",
+  "@myAccount": {
+    "description": "我的账号",
+    "type": "text",
+    "placeholders": {}
+  },
+  "login": "Вход",
+  "@login": {
+    "description": "登录",
+    "type": "text",
+    "placeholders": {}
+  },
+  "email": "Email",
+  "@email": {
+    "description": "邮箱",
+    "type": "text",
+    "placeholders": {}
+  },
+  "password": "Пароль",
+  "@password": {
+    "description": "密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputEmail": "Введите email",
+  "@inputEmail": {
+    "description": "输入邮箱",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputPassword": "Введите пароль",
+  "@inputPassword": {
+    "description": "输入密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forget": "Забыли",
+  "@forget": {
+    "description": "忘记",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logIn": "Войти",
+  "@logIn": {
+    "description": "登 录",
+    "type": "text",
+    "placeholders": {}
+  },
+  "haveNoAccount": "Нет аккаунта? Зарегистрируйтесь",
+  "@haveNoAccount": {
+    "description": "没有账号?注册一个",
+    "type": "text",
+    "placeholders": {}
+  },
+  "register": "Регистрация",
+  "@register": {
+    "description": "注册",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailCantBeEmpty": "Email не может быть пустым",
+  "@emailCantBeEmpty": {
+    "description": "邮箱不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailIncorrectFormat": "Неверный формат email",
+  "@emailIncorrectFormat": {
+    "description": "邮箱格式不正确",
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordCantBeEmpty": "Пароль не может быть пустым",
+  "@passwordCantBeEmpty": {
+    "description": "密码不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordTooShort": "Пароль должен быть не менее 8 символов",
+  "@passwordTooShort": {
+    "description": "密码长度不能小于8位",
+    "type": "text",
+    "placeholders": {}
+  },
+  "passwordTooLong": "Пароль не может быть длиннее 20 символов",
+  "@passwordTooLong": {
+    "description": "密码长度不能大于20位",
+    "type": "text",
+    "placeholders": {}
+  },
+  "signUp": "Регистрация",
+  "@signUp": {
+    "description": "注册",
+    "type": "text",
+    "placeholders": {}
+  },
+  "setUserName": "Установите имя пользователя",
+  "@setUserName": {
+    "description": "请设置你的用户名",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameContainEmpty": "Имя пользователя не может содержать пробелы",
+  "@userNameContainEmpty": {
+    "description": "用户名不能包含空格",
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyCodeCantBeEmpty": "Код подтверждения не может быть пустым",
+  "@verifyCodeCantBeEmpty": {
+    "description": "验证码不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyCodeContainEmpty": "Код подтверждения не может содержать пробелы",
+  "@verifyCodeContainEmpty": {
+    "description": "验证码不能包含空格",
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmPasswordCantBeEmpty": "Подтверждение пароля не может быть пустым",
+  "@confirmPasswordCantBeEmpty": {
+    "description": "确认密码不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmPasswordContainEmpty": "Подтверждение пароля не может содержать пробелы",
+  "@confirmPasswordContainEmpty": {
+    "description": "确认密码不能包含空格",
+    "type": "text",
+    "placeholders": {}
+  },
+  "twoPasswordsNotSame": "Пароли не совпадают",
+  "@twoPasswordsNotSame": {
+    "description": "两次密码输入不一致",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userName": "Имя пользователя",
+  "@userName": {
+    "description": "用户名",
+    "type": "text",
+    "placeholders": {}
+  },
+  "emailAccount": "Email аккаунт",
+  "@emailAccount": {
+    "description": "邮箱账号",
+    "type": "text",
+    "placeholders": {}
+  },
+  "setEmailAccount": "Установите ваш email аккаунт",
+  "@setEmailAccount": {
+    "description": "请设置你的邮箱账号",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputEmailAccount": "Введите ваш email аккаунт",
+  "@inputEmailAccount": {
+    "description": "请输入你的邮箱账号",
+    "type": "text",
+    "placeholders": {}
+  },
+  "verifyCode": "Код подтверждения",
+  "@verifyCode": {
+    "description": "验证码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputVerifyCode": "Введите код подтверждения",
+  "@inputVerifyCode": {
+    "description": "输入验证码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "getVerifyCode": "Получить код",
+  "@getVerifyCode": {
+    "description": "获取验证码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "setPassword": "Установите пароль",
+  "@setPassword": {
+    "description": "请设置你的密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "thePassword": "Пароль",
+  "@thePassword": {
+    "description": "密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "reSetPassword": "Подтвердите пароль еще раз",
+  "@reSetPassword": {
+    "description": "再次确认你的密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "confirmPassword": "Подтверждение пароля",
+  "@confirmPassword": {
+    "description": "确认密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkYourEmail": "Проверьте ваш email",
+  "@checkYourEmail": {
+    "description": "请检查你的邮箱账号",
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkYourEmailOrPassword": "Проверьте ваш email или пароль",
+  "@checkYourEmailOrPassword": {
+    "description": "请检查你的邮箱或者密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkYourUserName": "Проверьте имя пользователя",
+  "@checkYourUserName": {
+    "description": "请检查你的用户名",
+    "type": "text",
+    "placeholders": {}
+  },
+  "usernameCantBeEmpty": "Имя пользователя не может быть пустым",
+  "@usernameCantBeEmpty": {
+    "description": "用户名不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "wrongParams": "Проверьте введенные данные",
+  "@wrongParams": {
+    "description": "请检查你的输入内容",
+    "type": "text",
+    "placeholders": {}
+  },
+  "setNewPassword": "Установите новый пароль",
+  "@setNewPassword": {
+    "description": "请设置你的新密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "forgetPassword": "Забыли пароль",
+  "@forgetPassword": {
+    "description": "忘记密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPassword": "Изменить пароль",
+  "@resetPassword": {
+    "description": "修改密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newPassword": "Новый пароль",
+  "@newPassword": {
+    "description": "新密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "oldPassword": "Старый пароль",
+  "@oldPassword": {
+    "description": "原密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputOldPassword": "Введите старый пароль",
+  "@inputOldPassword": {
+    "description": "请输入你的原密码",
+    "type": "text",
+    "placeholders": {}
+  },
+  "oldPasswordCantBeEmpty": "Старый пароль не может быть пустым",
+  "@oldPasswordCantBeEmpty": {
+    "description": "原密码不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newPasswordCantBeEmpty": "Новый пароль не может быть пустым",
+  "@newPasswordCantBeEmpty": {
+    "description": "新密码不能为空",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPasswordSuccess": "Пароль успешно изменен",
+  "@resetPasswordSuccess": {
+    "description": "密码修改成功",
+    "type": "text",
+    "placeholders": {}
+  },
+  "resetPasswordFailed": "Не удалось изменить пароль",
+  "@resetPasswordFailed": {
+    "description": "密码修改失败",
+    "type": "text",
+    "placeholders": {}
+  },
+  "logout": "Выйти",
+  "@logout": {
+    "description": "退出登录",
+    "type": "text",
+    "placeholders": {}
+  },
+  "skip": "Пропустить",
+  "@skip": {
+    "description": "跳过",
+    "type": "text",
+    "placeholders": {}
+  },
+  "doneList": "Выполненные задачи",
+  "@doneList": {
+    "description": "完成列表",
+    "type": "text",
+    "placeholders": {}
+  },
+  "toFinishTask": "Постарайтесь выполнить задачу!",
+  "@toFinishTask": {
+    "description": "努力去完成一项任务吧!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "taskNum": "Количество задач",
+  "@taskNum": {
+    "description": "任务数",
+    "type": "text",
+    "placeholders": {}
+  },
+  "createDate": "Дата создания",
+  "@createDate": {
+    "description": "创建日期",
+    "type": "text",
+    "placeholders": {}
+  },
+  "completeDate": "Дата завершения",
+  "@completeDate": {
+    "description": "完成日期",
+    "type": "text",
+    "placeholders": {}
+  },
+  "spendTime": "Затрачено времени",
+  "@spendTime": {
+    "description": "用时",
+    "type": "text",
+    "placeholders": {}
+  },
+  "changedTimes": "Количество изменений",
+  "@changedTimes": {
+    "description": "修改次数",
+    "type": "text",
+    "placeholders": {}
+  },
+  "hours": "{hours,plural, =0{Очень быстро!}=1{1 час}many{{hours} часов}other{{hours} часов}}",
+  "@hours": {
+    "type": "text",
+    "placeholders": {
+      "hours": {}
+    }
+  },
+  "days": "{days,plural, =0{Очень быстро!}=1{1 день}many{{days} дней}other{{days} дней}}",
+  "@days": {
+    "type": "text",
+    "placeholders": {
+      "days": {}
+    }
+  },
+  "languageTitle": "Сменить язык",
+  "@languageTitle": {
+    "description": "Change Language",
+    "type": "text",
+    "placeholders": {}
+  },
+    "changeTheme": "Сменить тему",
+    "@changeTheme": {
+      "description": "切换主题",
+      "type": "text",
+      "placeholders": {}
+    },
+  "feedback": "Обратная связь",
+  "@feedback": {
+    "description": "意见反馈",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackWall": "Стена отзывов",
+  "@feedbackWall": {
+    "description": "反馈墙",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackCantBeNull": "Отзыв не может быть пустым",
+  "@feedbackCantBeNull": {
+    "description": "意见反馈内容不能为空哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackIsTooLittle": "Отзыв слишком короткий, добавьте еще",
+  "@feedbackIsTooLittle": {
+    "description": "意见反馈内容太少了，再加点儿吧",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackNeedEmoji": "Выберите эмодзи для оценки",
+  "@feedbackNeedEmoji": {
+    "description": "选个评价表情吧",
+    "type": "text",
+    "placeholders": {}
+  },
+  "feedbackFrequently": "Можно отправить только один раз в 8 часов",
+  "@feedbackFrequently": {
+    "description": "8小时内只能提交一次哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeYourFeedback": "Напишите ваш отзыв или предложение",
+  "@writeYourFeedback": {
+    "description": "写下你的意见或是建议吧",
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeYourContactInfo": "Оставить контактную информацию",
+  "@writeYourContactInfo": {
+    "description": "是否留下你的联系方式",
+    "type": "text",
+    "placeholders": {}
+  },
+  "waitAMoment": "Подождите...",
+  "@waitAMoment": {
+    "description": "请稍后...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "submitSuccess": "Успешно отправлено!",
+  "@submitSuccess": {
+    "description": "提交成功！",
+    "type": "text",
+    "placeholders": {}
+  },
+  "thanksForFeedback": "Спасибо за ваш отзыв",
+  "@thanksForFeedback": {
+    "description": "感谢你的反馈",
+    "type": "text",
+    "placeholders": {}
+  },
+  "submitAgain": "Отправить снова",
+  "@submitAgain": {
+    "description": "重新提交",
+    "type": "text",
+    "placeholders": {}
+  },
+  "noName": "Аноним",
+  "@noName": {
+    "description": "无名氏",
+    "type": "text",
+    "placeholders": {}
+  },
+  "appSetting": "Настройки",
+  "@appSetting": {
+    "description": "app设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "splashAnimation": "Включить анимацию загрузки",
+  "@splashAnimation": {
+    "description": "开启首页动画",
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableWeatherShow": "Включить погоду",
+  "@enableWeatherShow": {
+    "description": "开启天气",
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableNetPicBgInMainPage": "Включить сетевое изображение фона",
+  "@enableNetPicBgInMainPage": {
+    "description": "开启主页网络图片背景",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputCurrentCity": "Введите ваш город",
+  "@inputCurrentCity": {
+    "description": "手动输入你的城市",
+    "type": "text",
+    "placeholders": {}
+  },
+  "weatherGetWrong": "Не удалось получить погоду, попробуйте снова",
+  "@weatherGetWrong": {
+    "description": "天气获取失败,请重新尝试",
+    "type": "text",
+    "placeholders": {}
+  },
+  "weatherGetting": "Получение погоды...",
+  "@weatherGetting": {
+    "description": "天气获取中...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "weatherSuccess": "Погода успешно получена",
+  "@weatherSuccess": {
+    "description": "天气获取成功...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "blog": "Мой блог",
+  "@blog": {
+    "description": "我的博客",
+    "type": "text",
+    "placeholders": {}
+  },
+  "myBlog": "Flutter Web блог",
+  "@myBlog": {
+    "description": "flutter web博客",
+    "type": "text",
+    "placeholders": {}
+  },
+  "aboutApp": "О приложении",
+  "@aboutApp": {
+    "description": "关于",
+    "type": "text",
+    "placeholders": {}
+  },
+  "versionDescription": "Описание версии",
+  "@versionDescription": {
+    "description": "版本描述",
+    "type": "text",
+    "placeholders": {}
+  },
+  "projectLink": "Ссылка на проект",
+  "@projectLink": {
+    "description": "项目地址",
+    "type": "text",
+    "placeholders": {}
+  },
+  "myGithub": "GitHub автора",
+  "@myGithub": {
+    "description": "作者的github",
+    "type": "text",
+    "placeholders": {}
+  },
+  "iconSetting": "Настройки иконок",
+  "@iconSetting": {
+    "description": "图标设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "navigatorSetting": "Настройки навигации",
+  "@navigatorSetting": {
+    "description": "导航栏设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "meteorShower": "Метеорный дождь",
+  "@meteorShower": {
+    "description": "天体流星",
+    "type": "text",
+    "placeholders": {}
+  },
+  "dailyPic": "Обои дня",
+  "@dailyPic": {
+    "description": "每日壁纸",
+    "type": "text",
+    "placeholders": {}
+  },
+  "netPicture": "Сетевое изображение",
+  "@netPicture": {
+    "description": "网络图片",
+    "type": "text",
+    "placeholders": {}
+  },
+  "accountBackgroundSetting": "Настройки фона",
+  "@accountBackgroundSetting": {
+    "description": "背景设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "picture": "Изображение",
+  "@picture": {
+    "description": "图片",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cartOpacity": "Прозрачность фона карточки",
+  "@cartOpacity": {
+    "description": "卡片背景透明度",
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableTaskDetailOpacity": "Включить прозрачность фона задачи",
+  "@enableTaskDetailOpacity": {
+    "description": "开启任务界面背景透明",
+    "type": "text",
+    "placeholders": {}
+  },
+  "currentIcons": "Текущие иконки",
+  "@currentIcons": {
+    "description": "当前图标",
+    "type": "text",
+    "placeholders": {}
+  },
+  "game": "Игры",
+  "@game": {
+    "description": "打游戏",
+    "type": "text",
+    "placeholders": {}
+  },
+  "music": "Музыка",
+  "@music": {
+    "description": "听歌",
+    "type": "text",
+    "placeholders": {}
+  },
+  "read": "Чтение",
+  "@read": {
+    "description": "读书",
+    "type": "text",
+    "placeholders": {}
+  },
+  "sports": "Спорт",
+  "@sports": {
+    "description": "运动",
+    "type": "text",
+    "placeholders": {}
+  },
+  "travel": "Путешествия",
+  "@travel": {
+    "description": "旅行",
+    "type": "text",
+    "placeholders": {}
+  },
+  "work": "Работа",
+  "@work": {
+    "description": "工作",
+    "type": "text",
+    "placeholders": {}
+  },
+  "defaultIconName": "По умолчанию",
+  "@defaultIconName": {
+    "description": "默认",
+    "type": "text",
+    "placeholders": {}
+  },
+  "setIconName": "Название иконки",
+  "@setIconName": {
+    "description": "给图标设置一个名字吧",
+    "type": "text",
+    "placeholders": {}
+  },
+  "customIcon": "Пользовательская иконка",
+  "@customIcon": {
+    "description": "自定义图标",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cancel": "Отмена",
+  "@cancel": {
+    "description": "取消",
+    "type": "text",
+    "placeholders": {}
+  },
+  "ok": "ОК",
+  "@ok": {
+    "description": "确定",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pickAColor": "Выберите цвет!",
+  "@pickAColor": {
+    "description": "选择一个颜色吧!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "canNotAddMoreIcon": "Можно создать не более 10 пользовательских иконок",
+  "@canNotAddMoreIcon": {
+    "description": "最多只能自定义10个图标",
+    "type": "text",
+    "placeholders": {}
+  },
+  "canNotEditDefaultIcon": "Нельзя редактировать иконку по умолчанию",
+  "@canNotEditDefaultIcon": {
+    "description": "默认图标无法编辑哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "customTheme": "Пользовательская тема",
+  "@customTheme": {
+    "description": "自定义主题",
+    "type": "text",
+    "placeholders": {}
+  },
+  "canNotAddMoreTheme": "Можно создать не более 10 пользовательских тем",
+  "@canNotAddMoreTheme": {
+    "description": "最多只能自定义10个主题哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "writeAtLeastOneTaskItem": "Напишите хотя бы одну задачу",
+  "@writeAtLeastOneTaskItem": {
+    "description": "请至少写下一项任务哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "defaultTitle": "Заголовок по умолчанию",
+  "@defaultTitle": {
+    "description": "默认标题",
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarLocal": "Выбрать аватар из локального хранилища",
+  "@avatarLocal": {
+    "description": "从本地选取头像",
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarNet": "Выбрать аватар из сети",
+  "@avatarNet": {
+    "description": "从网络选取头像",
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatarHistory": "История аватаров",
+  "@avatarHistory": {
+    "description": "历史头像记录",
+    "type": "text",
+    "placeholders": {}
+  },
+  "avatar": "Аватар",
+  "@avatar": {
+    "description": "头像",
+    "type": "text",
+    "placeholders": {}
+  },
+  "save": "Сохранить",
+  "@save": {
+    "description": "保存",
+    "type": "text",
+    "placeholders": {}
+  },
+  "history": "История",
+  "@history": {
+    "description": "历史",
+    "type": "text",
+    "placeholders": {}
+  },
+  "netPicHistory": "История изображений",
+  "@netPicHistory": {
+    "description": "历史图片",
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectLocalImage": "Локальное изображение",
+  "@selectLocalImage": {
+    "description": "本地图片",
+    "type": "text",
+    "placeholders": {}
+  },
+  "deniedDes": "Доступ запрещен",
+  "@deniedDes": {
+    "description": "权限被拒绝",
+    "type": "text",
+    "placeholders": {}
+  },
+  "disabledDes": "Разрешение недоступно",
+  "@disabledDes": {
+    "description": "权限不可用",
+    "type": "text",
+    "placeholders": {}
+  },
+  "restrictedDes": "Разрешение ограничено",
+  "@restrictedDes": {
+    "description": "权限被限制",
+    "type": "text",
+    "placeholders": {}
+  },
+  "unknownDes": "Неизвестное разрешение",
+  "@unknownDes": {
+    "description": "未知权限",
+    "type": "text",
+    "placeholders": {}
+  },
+  "openSystemSetting": "Открыть системные настройки",
+  "@openSystemSetting": {
+    "description": "打开系统设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "checkUpdate": "Проверить обновления",
+  "@checkUpdate": {
+    "description": "检查更新",
+    "type": "text",
+    "placeholders": {}
+  },
+  "update": "Обновить",
+  "@update": {
+    "description": "升级",
+    "type": "text",
+    "placeholders": {}
+  },
+  "newVersionIsComing": "Доступна новая версия!",
+  "@newVersionIsComing": {
+    "description": "新版本来啦!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "noUpdate": "Установлена последняя версия",
+  "@noUpdate": {
+    "description": "已是最新版本",
+    "type": "text",
+    "placeholders": {}
+  },
+  "bgChangeWithCard": "Фон следует за цветом иконки задачи",
+  "@bgChangeWithCard": {
+    "description": "背景跟随任务图标颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cardChangeWithBg": "Цвет иконки задачи следует за фоном",
+  "@cardChangeWithBg": {
+    "description": "任务图标颜色跟随背景",
+    "type": "text",
+    "placeholders": {}
+  },
+  "backgroundGradient": "Градиент фона",
+  "@backgroundGradient": {
+    "description": "app设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "enableInfiniteScroll": "Циклическая прокрутка карточек задач",
+  "@enableInfiniteScroll": {
+    "description": "任务卡片循环滑动",
+    "type": "text",
+    "placeholders": {}
+  },
+  "random": "Случайная",
+  "@random": {
+    "description": "随心所欲",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pink": "Розовая",
+  "@pink": {
+    "description": "主题颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+    "coffee": "Кофейная",
+    "@coffee": {
+      "description": "主题颜色",
+      "type": "text",
+      "placeholders": {}
+    },
+  "cyan": "Голубая",
+  "@cyan": {
+    "description": "主题颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+  "green": "Зеленая",
+  "@green": {
+    "description": "主题颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+  "purple": "Фиолетовая",
+  "@purple": {
+    "description": "主题颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+  "dark": "Темная",
+  "@dark": {
+    "description": "主题颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+  "blueGray": "Серо-голубая",
+  "@blueGray": {
+    "description": "主题颜色",
+    "type": "text",
+    "placeholders": {}
+  },
+  "delete": "Удалить",
+  "@delete": {
+    "description": "删除",
+    "type": "text",
+    "placeholders": {}
+  },
+  "doDelete": "Удалить задачу?",
+  "@doDelete": {
+    "description": "是否要删除任务:",
+    "type": "text",
+    "placeholders": {}
+  },
+  "setBackground": "Установить фон",
+  "@setBackground": {
+    "description": "设置背景:",
+    "type": "text",
+    "placeholders": {}
+  },
+  "textColor": "Цвет текста",
+  "@textColor": {
+    "description": "文字颜色:",
+    "type": "text",
+    "placeholders": {}
+  },
+  "background": "Фон",
+  "@background": {
+    "description": "背景:",
+    "type": "text",
+    "placeholders": {}
+  },
+  "clearBackground": "Очистить фон",
+  "@clearBackground": {
+    "description": "清除背景:",
+    "type": "text",
+    "placeholders": {}
+  },
+  "fontSize": "Размер шрифта",
+  "@fontSize": {
+    "description": "字体大小:",
+    "type": "text",
+    "placeholders": {}
+  },
+  "autoDarkMode": "Автоматический ночной режим",
+  "@autoDarkMode": {
+    "description": "自动夜间模式",
+    "type": "text",
+    "placeholders": {}
+  },
+  "selectLightTime": "Выберите дневной интервал времени",
+  "@selectLightTime": {
+    "description": "选择白天时间区间",
+    "type": "text",
+    "placeholders": {}
+  },
+  "start": "Начало",
+  "@start": {
+    "description": "开始",
+    "type": "text",
+    "placeholders": {}
+  },
+  "end": "Конец",
+  "@end": {
+    "description": "结束",
+    "type": "text",
+    "placeholders": {}
+  },
+  "timeError": "Время начала не может быть меньше времени окончания",
+  "@timeError": {
+    "description": "开始时间不能小于结束时间",
+    "type": "text",
+    "placeholders": {}
+  },
+  "editTask": "Редактировать задачу",
+  "@editTask": {
+    "description": "编辑任务",
+    "type": "text",
+    "placeholders": {}
+  },
+  "deleteTask": "Удалить задачу",
+  "@deleteTask": {
+    "description": "删除任务",
+    "type": "text",
+    "placeholders": {}
+  },
+  "submit": "Отправить",
+  "@submit": {
+    "description": "提交任务",
+    "type": "text",
+    "placeholders": {}
+  },
+  "addTask": "Добавить задачу",
+  "@addTask": {
+    "description": "添加任务",
+    "type": "text",
+    "placeholders": {}
+  },
+  "deadline": "Крайний срок",
+  "@deadline": {
+    "description": "截止日期",
+    "type": "text",
+    "placeholders": {}
+  },
+  "startDate": "Дата начала",
+  "@startDate": {
+    "description": "开始日期",
+    "type": "text",
+    "placeholders": {}
+  },
+  "remindMe": "Напомнить мне",
+  "@remindMe": {
+    "description": "提醒我",
+    "type": "text",
+    "placeholders": {}
+  },
+  "repeat": "Повторить",
+  "@repeat": {
+    "description": "重复",
+    "type": "text",
+    "placeholders": {}
+  },
+  "startAfterEnd": "Дата начала должна быть раньше даты окончания",
+  "@startAfterEnd": {
+    "description": "开始日期要比结束日期小才行哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "endBeforeStart": "Дата окончания должна быть позже даты начала",
+  "@endBeforeStart": {
+    "description": "结束日期要比开始日期大才行哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "notSynced": "Не синхронизировано",
+  "@notSynced": {
+    "description": "未同步 ",
+    "type": "text",
+    "placeholders": {}
+  },
+  "clickToSyn": "Нажмите для синхронизации",
+  "@clickToSyn": {
+    "description": "点击同步",
+    "type": "text",
+    "placeholders": {}
+  },
+  "synchronizing": "Синхронизация...",
+  "@synchronizing": {
+    "description": "同步中...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "cloudSynchronizing": "Получение данных из облака...",
+  "@cloudSynchronizing": {
+    "description": "获取云端数据...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "synchronizeFailed": "Синхронизация не удалась",
+  "@synchronizeFailed": {
+    "description": "同步失败",
+    "type": "text",
+    "placeholders": {}
+  },
+  "welcomeWord": "Привет! ",
+  "@welcomeWord": {
+    "description": "主页的欢迎词",
+    "type": "text",
+    "placeholders": {}
+  },
+  "customUserName": "Настройка имени",
+  "@customUserName": {
+    "description": "昵称设置",
+    "type": "text",
+    "placeholders": {}
+  },
+  "inputUserName": "Введите ваше имя",
+  "@inputUserName": {
+    "description": "输入你的昵称吧",
+    "type": "text",
+    "placeholders": {}
+  },
+  "userNameCantBeNull": "Имя не может быть пустым!",
+  "@userNameCantBeNull": {
+    "description": "昵称不能为空哦!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "taskItems": "{taskNumbers,plural, =0{У вас еще нет списка задач.\nДавайте начнем!}=1{Вот ваш список задач,\nСегодня у вас 1 незавершенная задача. }many{Вот ваш список задач,\nСегодня у вас {taskNumbers} незавершенных задач. }other{Вот ваш список задач,\nСегодня у вас {taskNumbers} незавершенных задач. }}",
+  "@taskItems": {
+    "type": "text",
+    "placeholders": {
+      "taskNumbers": {}
+    }
+  },
+  "itemNumber": "{number,plural, =0{Нет деталей задачи }=1{1 пункт }other{{number} пунктов }}",
+  "@itemNumber": {
+    "type": "text",
+    "placeholders": {
+      "number": {}
+    }
+  },
+  "loadingEmpty": "Ничего нет",
+  "@loadingEmpty": {
+    "description": "什么都没有哦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loadingIdle": "......",
+  "@loadingIdle": {
+    "description": "......",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loadingError": "Ошибка загрузки",
+  "@loadingError": {
+    "description": "加载出错了",
+    "type": "text",
+    "placeholders": {}
+  },
+  "loading": "Загрузка...",
+  "@loading": {
+    "description": "加载中...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "waiting": "Подождите...",
+  "@waiting": {
+    "description": "请稍后...",
+    "type": "text",
+    "placeholders": {}
+  },
+  "timeOut": "Ошибка тайм-аута",
+  "@timeOut": {
+    "description": "超时错误",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pullUpToLoadMore": "Потяните вверх для загрузки",
+  "@pullUpToLoadMore": {
+    "description": "上拉加载更多",
+    "type": "text",
+    "placeholders": {}
+  },
+  "pullDownToRefresh": "Потяните вниз для обновления",
+  "@pullDownToRefresh": {
+    "description": "下拉刷新",
+    "type": "text",
+    "placeholders": {}
+  },
+ "reLoading": "Нажмите для перезагрузки",
+ "@reLoading": {
+   "description": "点击重新加载",
+   "type": "text",
+   "placeholders": {}
+ },
+  "requestError": "Ошибка запроса",
+  "@requestError": {
+    "description": "请求错误",
+    "type": "text",
+    "placeholders": {}
+  },
+  "requestFailed": "Запрос не выполнен",
+  "@requestFailed": {
+    "description": "请求失败",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version100": "Версия: 1.0.0 \n\nВерсия 1.0.0 выпущена!",
+  "@version100": {
+    "description": "版本:1.0.0 \n\n版本 1.0.0 发布啦!",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version101": "Версия: 1.0.1 \n\n1. Исправлена ошибка отображения списка выполненных задач\n2. Добавлена возможность указывать время начала и окончания для напоминаний\n",
+  "@version101": {
+    "description": "版本:1.0.1 \n\n1.修复完成列表界面的显示bug\n2.新增编辑任务可以添加起止时间，用作提醒\n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version102": "Версия: 1.0.2 \n\n1. Исправлены мелкие ошибки \n2. Добавлен поиск иконок в настройках \n",
+  "@version102": {
+    "description": "版本:1.0.2 \n\n1.修复一些小bug \n2.图标设置界面可以搜索图标了 \n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version103": "Версия: 1.0.3 \n\n1. Исправлен цвет текста в диалоге обновления (темный режим) \n2. Исправлено отрицательное время выполнения в списке \n3. Добавлена стена отзывов! \n",
+  "@version103": {
+    "description": "版本:1.0.3 \n\n1.修复：升级弹框的文字颜色错误(夜间模式下) \n2.修复：完成列表显示的的完成用时为负数 \n3.新增：留言展示墙！ \n",
+    "type": "text",
+    "placeholders": {}
+  },
+ "version104": "Версия: 1.0.4 \n\n1. Исправлены ошибки переполнения на странице поиска и другие мелкие ошибки \n2. Добавлена система аккаунтов! 🎉 Празднуем 500 звезд на GitHub! \n\nВ планах: синхронизация задач с облаком\n",
+ "@version104": {
+   "description": "版本:1.0.4 \n\n1.修复：搜索页面的控件溢出bug、其他各种小bug \n2.新增：账号系统!🎉庆祝github Star数过500！ \n\nTodo:任务列表信息同步至云端功能,麻麻再也不用担心我换手机啦\n",
+   "type": "text",
+   "placeholders": {}
+  },
+  "version105": "Версия: 1.0.5 \n\n1. Исправлена ошибка обновления после входа \n2. Оптимизировано отображение ошибок тайм-аута \n3. Добавлена синхронизация задач с облаком! 🎉 \n",
+  "@version105": {
+    "description": "版本:1.0.5 \n\n1.修复：从主页进入登录页登录后再进入主页后，创建task不能刷新的bug \n2.优化：升级弹窗显示timeout报错 \n3.新增：🎉任务同步至云端功能！麻麻再也不用担心我换手机啦！🎉 ",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version106": "Версия: 1.0.6 \n\n1. Исправлено множество ошибок системы аккаунтов \n2. Теперь можно редактировать все иконки при наличии 6+ пользовательских \n3. Добавлена возможность установки сетевого изображения в качестве фона \n",
+  "@version106": {
+    "description": "版本:1.0.6 \n\n1.修复：大量因为上线账号系统,而新增的bug \n2.优化：当自定义图标数量不低于6个的时候，你可以任意编辑图标啦 \n3.新增：你可以在账号页面设置网络图片作为背景啦",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version107": "Версия: 1.0.7 \n\n1. Исправлены обнаруженные ошибки\n2. Теперь можно установить сетевое изображение в качестве фона главной страницы! \n",
+  "@version107": {
+    "description": "版本:1.0.7 \n\n1.修复：已经发现的一些bug\n2.新增：现在可以将主页的背景更换为网络图片啦，非常漂亮哦！ \n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version108": "Версия: 1.0.8 \n\n1. Исправлено отображение валидации после нажатия кнопки\n2. История использованных фоновых изображений теперь сохраняется \n",
+  "@version108": {
+    "description": "版本:1.0.8 \n\n1.修复：输入框的验证提示将会在点击按钮后显示\n2.新增：你使用过的网络背景图片现在可以在历史记录中找到了 \n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version109": "Версия: 1.0.9 \n\n1. Исправлено выравнивание курсора в полях ввода \n2. Оптимизировано управление диском задач \n3. Добавлена анимация загрузки! ✨ \n",
+  "@version109": {
+    "description": "版本:1.0.9 \n\n1.修复：输入框光标与文字不对齐的问题 \n2.优化：任务圆盘的滑动事件不再局限于任务图标，而是在整个圆盘上触发 \n3.新增：✨开场动画！✨ \n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version110": "Версия: 1.1.0 \n\n1. Исправлена невозможность ввода после нажатия кнопки отправки \n2. Оптимизирована фоновая загрузка и добавлен сетевой кэш \n3. Добавлена полная настройка карточек задач! 🚀 \n4. Долгое нажатие на главной странице открывает настройки фона \n",
+  "@version110": {
+    "description": "版本:1.1.0 \n\n1.修复：任务编辑界面,点击\"提交按钮\"后无法输入文字 \n2.优化：下载过程可以在后台处理了;部分页面新增网络缓存; \n3.新增：🚀全面的、对任务卡片的自定义操作！🚀 \n4.操作：主页长按可进入背景设置界面;任务编辑界面可以进行图标编辑; \n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version111": "Версия: 1.1.1 \n\n1. Исправлены различные ошибки \n2. Добавлена настройка автоматического ночного режима ^_^ \n3. Теперь можно использовать локальные изображения в качестве фона!! \n",
+  "@version111": {
+    "description": "版本:1.1.1 \n\n1.修复：你可能已经遇到过,或者你从来没遇到过的bug~~ \n2.新增：现在可以设置自动进入夜间模式的时间段了 ^_^ \n3.新增：图片背景下现在可以直接使用本地图片了哦!! \n",
+    "type": "text",
+    "placeholders": {}
+  },
+  "version112": "Версия: 1.1.2 \n\n1. Исправлены ошибки из стены отзывов \n2. Добавлена настройка прозрачности фона карточек задач \n3. Долгое нажатие на кнопку ‘+’ открывает настройки! \n",
+  "@version112": {
+    "description": "版本:1.1.2 \n\n1.修复：反馈墙中提及的bug们~~ \n2.新增：现在任务卡片可以设置背景透明度了 \n3.操作：长按 ‘+’ 按钮可以弹出设置选项哦! \n",
+    "type": "text",
+    "placeholders": {}
+  }
+}
