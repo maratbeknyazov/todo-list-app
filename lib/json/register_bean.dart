@@ -13,10 +13,10 @@ class RegisterBean {
 
   static RegisterBean fromMap(Map<String, dynamic> map) {
     RegisterBean diaryBase = new RegisterBean();
-    diaryBase.description = map['description'] as String;
-    diaryBase.token = map['token'] as String;
-    diaryBase.avatarUrl = map['avatarUrl'] as String;
-    diaryBase.status = map['status'] as int;
+    diaryBase.description = map['description'] as String? ?? '';
+    diaryBase.token = map['token'] as String? ?? '';
+    diaryBase.avatarUrl = map['avatarUrl'] as String? ?? '';
+    diaryBase.status = map['status'] as int? ?? 0;
     return diaryBase;
   }
 

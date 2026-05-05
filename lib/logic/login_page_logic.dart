@@ -15,6 +15,8 @@ import 'package:todo_list/model/all_model.dart';
 import 'package:flutter/material.dart';
 import 'package:todo_list/utils/my_encrypt_util.dart';
 import 'package:todo_list/utils/shared_util.dart';
+import 'package:todo_list/utils/password_util.dart';
+import 'package:todo_list/utils/secure_storage_util.dart';
 import 'package:todo_list/widgets/net_loading_widget.dart';
 
 class LoginPageLogic {
@@ -127,18 +129,26 @@ class LoginPageLogic {
 
     final account = _model.emailController.text;
     final password = _model.passwordController.text;
+
+    // Хешируем пароль перед отправкой на сервер (SHA-256)
+    final hashedPassword = PasswordUtil.hashPassword(password);
+
+    // Шифруем пароль для локального хранения (AES)
     final encryptPassword = EncryptUtil.instance.encrypt(password);
 
     ApiService.instance.login(
       params: {
         "account": "$account",
-        "password": "$encryptPassword"
+        "password": "$hashedPassword" // Отправляем хешированный пароль
       },
-      success: (LoginBean loginBean) {
+      success: (LoginBean loginBean) async {
+        // Сохраняем чувствительные данные в безопасное хранилище
+        await SecureStorageUtil.instance.saveString(Keys.password, encryptPassword);
+        await SecureStorageUtil.instance.saveString(Keys.token, loginBean.token);
+
+        // Обычные данные сохраняем в SharedPreferences
         SharedUtil.instance.saveString(Keys.account, account).then((value){
-          SharedUtil.instance.saveString(Keys.password, encryptPassword);
           SharedUtil.instance.saveString(Keys.currentUserName, loginBean.username);
-          SharedUtil.instance.saveString(Keys.token, loginBean.token);
           SharedUtil.instance.saveBoolean(Keys.hasLogged, true);
           SharedUtil.instance.saveString(Keys.netAvatarPath, ApiStrategy.baseUrl + loginBean.avatarUrl);
           SharedUtil.instance.saveInt(Keys.currentAvatarType, CurrentAvatarType.net);

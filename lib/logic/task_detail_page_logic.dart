@@ -1,4 +1,5 @@
 import 'package:flutter/cupertino.dart';
+import 'package:todo_list/utils/storage_helper.dart';
 // ============================================================================
 // ШАГ 2: LOGIC (Бизнес-логика)
 // ============================================================================
@@ -124,9 +125,9 @@ class TaskDetailPageLogic {
           Duration(
             milliseconds: 800,
           ), () {
-        debugPrint("删除了");
+        debugPrint("Deleted");
         removeTask(mainPageModel);
-        debugPrint("刷新main");
+        debugPrint("Refresh main");
         mainPageModel.refresh();
       });
     }
@@ -179,7 +180,7 @@ class TaskDetailPageLogic {
         builder: (ctx) {
           return NetLoadingWidget();
         });
-    final token = await SharedUtil.instance.getString(Keys.token);
+    final token = await StorageHelper.getToken();
     ApiService.instance.postDeleteTask(
       success: (CommonBean bean) {
         Navigator.of(_model.context!).pop();

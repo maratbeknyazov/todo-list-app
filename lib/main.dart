@@ -27,11 +27,22 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:todo_list/pages/home/splash_page.dart';
 import 'package:todo_list/utils/theme_util.dart';
+import 'package:todo_list/utils/my_encrypt_util.dart';
+import 'package:todo_list/utils/storage_helper.dart';
 
 import 'i10n/localization_intl.dart';
 
 // Точка входа - отсюда начинается выполнение приложения
-void main() {
+void main() async {
+  // Инициализация Flutter bindings
+  WidgetsFlutterBinding.ensureInitialized();
+
+  // Инициализация системы шифрования с уникальным ключом устройства
+  await EncryptUtil.instance.initialize();
+
+  // Миграция чувствительных данных в безопасное хранилище
+  await StorageHelper.migrateAll();
+
   runApp(
     // ProviderConfig оборачивает приложение для управления глобальным состоянием
     ProviderConfig.getInstance().getGlobal(MyApp()),
@@ -63,6 +74,16 @@ class MyApp extends StatelessWidget {
       localeResolutionCallback:
           (Locale? locale, Iterable<Locale> supportedLocales) {
         debugPrint("locale:$locale   sups:$supportedLocales  currentLocale:${model.currentLocale}");
+
+        // Проверяем, что текущая локаль поддерживается
+        if (model.currentLocale != null &&
+            !supportedLocales.contains(model.currentLocale)) {
+          // Если сохранённая локаль не поддерживается (например, zh_CN), сбрасываем на английский
+          model.currentLocale = Locale('en', 'US');
+          model.currentLanguage = "English";
+          model.currentLanguageCode = ['en', 'US'];
+        }
+
         // Если язык уже установлен, используем его
         if (model.currentLocale == locale) return model.currentLocale;
         for (var supportedLocale in supportedLocales) {
@@ -79,7 +100,8 @@ class MyApp extends StatelessWidget {
           }
         }
         if (model.currentLocale == null) {
-          model.currentLocale = Locale('ru', "RU");
+          model.currentLocale = Locale('en', "US");
+          model.currentLanguage = "English";
           return model.currentLocale;
         }
         return model.currentLocale;

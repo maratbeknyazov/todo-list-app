@@ -28,16 +28,16 @@ class NetPicturesPageModel extends ChangeNotifier{
   CancelToken cancelToken = CancelToken();
 
 
-  ///用于判断是否被销毁，防止与dio搭配使用报错
+  /// Used to determine if disposed, prevents errors when used with dio
   bool isDisposed = false;
 
-  ///表示这个网络图片是用来干嘛的,比如用来设置账号页面的背景、侧滑栏的头部图片
+  /// Indicates what this network image is used for, e.g., setting account page background or drawer header image
   String useType;
 
-  ///[accountPageModel]是从'我的账号'页面进入时传过来的值
+  /// [accountPageModel] is the value passed when entering from 'My Account' page
   AccountPageModel? accountPageModel;
 
-  ///[taskBean]表示当前背景设置页是为任务卡片设置背景
+  /// [taskBean] indicates the current background setting page is for setting task card background
   TaskBean? taskBean;
 
   NetPicturesPageModel({required this.useType, this.accountPageModel, this.taskBean}){
@@ -61,7 +61,7 @@ class NetPicturesPageModel extends ChangeNotifier{
     if(!cancelToken.isCancelled) cancelToken.cancel();
     painting.imageCache.clear();
     super.dispose();
-    debugPrint("NetPicturesPageModel销毁了");
+    debugPrint("NetPicturesPageModel destroyed");
   }
 
   void refresh(){

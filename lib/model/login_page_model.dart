@@ -25,7 +25,7 @@ class LoginPageModel extends ChangeNotifier{
   bool isPasswordOk = false;
   bool isLoginNow = false;
 
-  ///表示登录页面是不是第一个页面
+  /// Indicates whether the login page is the first page
   late bool isFirst;
 
   final formKey = GlobalKey<FormState>();
@@ -49,7 +49,7 @@ class LoginPageModel extends ChangeNotifier{
     passwordController.dispose();
     cancelToken.cancel();
     super.dispose();
-    debugPrint("LoginPageModel销毁了");
+    debugPrint("LoginPageModel destroyed");
   }
 
   void refresh(){

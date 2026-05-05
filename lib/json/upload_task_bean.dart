@@ -18,9 +18,9 @@ class UploadTaskBean {
 
   static UploadTaskBean fromMap(Map<String, dynamic> map) {
     UploadTaskBean uploadTaskBean = new UploadTaskBean();
-    uploadTaskBean.description = map['description'] as String;
-    uploadTaskBean.uniqueId = map['uniqueId'] as String;
-    uploadTaskBean.status = map['status'] as int;
+    uploadTaskBean.description = map['description'] as String? ?? '';
+    uploadTaskBean.uniqueId = map['uniqueId'] as String? ?? '';
+    uploadTaskBean.status = map['status'] as int? ?? 0;
     return uploadTaskBean;
   }
 

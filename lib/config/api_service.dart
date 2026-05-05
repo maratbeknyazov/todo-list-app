@@ -123,7 +123,7 @@ class ApiService {
         token: token);
   }
 
-  ///Получить погоду
+  ///Получить погоду (OpenWeatherMap API)
   void getWeatherNow({
     void Function(WeatherBean weatherBean)? success,
     void Function(WeatherBean weatherBean)? failed,
@@ -131,20 +131,23 @@ class ApiService {
     Map<String, String>? params,
     CancelToken? token,
   }) {
+    // Используем OpenWeatherMap API
     ApiStrategy.getInstance().get(
-      "https://free-api.heweather.com/s6/weather/now",
+      "https://api.openweathermap.org/data/2.5/weather",
       (data) {
-        WeatherBean weatherBean =
-            WeatherBean.fromMap(data as Map<String, dynamic>);
-        if (weatherBean.heWeather6[weatherBean.heWeather6.length - 1].status ==
-            "ok") {
+        try {
+          print('Weather API response: $data');
+          // Преобразуем ответ OpenWeatherMap в формат WeatherBean
+          WeatherBean weatherBean = WeatherBean.fromOpenWeatherMap(data as Map<String, dynamic>);
           success?.call(weatherBean);
-        } else {
-          failed?.call(weatherBean);
+        } catch (e) {
+          print('Error parsing weather data: $e');
+          error?.call('Error parsing weather data: $e');
         }
       },
       params: params,
       errorCallBack: (errorMessage) {
+        print('Weather API error callback: $errorMessage');
         error?.call(errorMessage);
       },
       token: token,
@@ -161,9 +164,17 @@ class ApiService {
     ApiStrategy.getInstance().post(
       "app/checkUpdate",
       (data) {
-        UpdateInfoBean updateInfoBean =
-            UpdateInfoBean.fromMap(data as Map<String, dynamic>);
-        success?.call(updateInfoBean);
+        try {
+          if (data == null) {
+            error?.call('No data received');
+            return;
+          }
+          UpdateInfoBean updateInfoBean =
+              UpdateInfoBean.fromMap(data as Map<String, dynamic>);
+          success?.call(updateInfoBean);
+        } catch (e) {
+          error?.call('Error parsing update info: $e');
+        }
       },
       params: params,
       errorCallBack: (errorMessage) {
@@ -184,11 +195,19 @@ class ApiService {
     ApiStrategy.getInstance().post(
         "fUser/login",
         (data) {
-          LoginBean loginBean = LoginBean.fromMap(data as Map<String, dynamic>);
-          if (loginBean.status == requestSucceed) {
-            success?.call(loginBean);
-          } else {
-            failed?.call(loginBean);
+          try {
+            if (data == null) {
+              error?.call('No data received');
+              return;
+            }
+            LoginBean loginBean = LoginBean.fromMap(data as Map<String, dynamic>);
+            if (loginBean.status == requestSucceed) {
+              success?.call(loginBean);
+            } else {
+              failed?.call(loginBean);
+            }
+          } catch (e) {
+            error?.call('Error parsing login response: $e');
           }
         },
         params: params,
@@ -285,12 +304,20 @@ class ApiService {
     ApiStrategy.getInstance().post(
       "fUser/register",
       (data) {
-        RegisterBean registerBean =
-            RegisterBean.fromMap(data as Map<String, dynamic>);
-        if (registerBean.status == requestSucceed) {
-          success?.call(registerBean);
-        } else {
-          failed?.call(registerBean);
+        try {
+          if (data == null) {
+            error?.call('No data received');
+            return;
+          }
+          RegisterBean registerBean =
+              RegisterBean.fromMap(data as Map<String, dynamic>);
+          if (registerBean.status == requestSucceed) {
+            success?.call(registerBean);
+          } else {
+            failed?.call(registerBean);
+          }
+        } catch (e) {
+          error?.call('Error parsing register response: $e');
         }
       },
       params: params,
@@ -347,12 +374,20 @@ class ApiService {
     ApiStrategy.getInstance().post(
       "oneDayTask/createTask",
       (data) {
-        UploadTaskBean bean =
-            UploadTaskBean.fromMap(data as Map<String, dynamic>);
-        if (bean.status == requestSucceed) {
-          success?.call(bean);
-        } else {
-          failed?.call(bean);
+        try {
+          if (data == null) {
+            error?.call('No data received');
+            return;
+          }
+          UploadTaskBean bean =
+              UploadTaskBean.fromMap(data as Map<String, dynamic>);
+          if (bean.status == requestSucceed) {
+            success?.call(bean);
+          } else {
+            failed?.call(bean);
+          }
+        } catch (e) {
+          error?.call('Error parsing task upload response: $e');
         }
       },
       params: {

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/utils/storage_helper.dart';
 import 'package:todo_list/config/api_service.dart';
 import 'package:todo_list/i10n/localization_intl.dart';
 import 'package:todo_list/model/all_model.dart';
@@ -187,7 +188,7 @@ class ResetPasswordPageLogic {
 
   _onResetPasswordRequest() async {
     final account = await SharedUtil.instance.getString(Keys.account) ?? "";
-    final token = await SharedUtil.instance.getString(Keys.token) ?? "";
+    final token = await StorageHelper.getToken() ?? "";
     final oldPassword = _model.oldPassword;
     final newPassword = _model.newPassword;
     final confirmPassword = _model.rePassword;

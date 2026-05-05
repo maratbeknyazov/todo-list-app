@@ -39,7 +39,7 @@ class FeedbackWallPageModel extends ChangeNotifier{
   @override
   void dispose(){
     super.dispose();
-    debugPrint("FeedbackWallPageModel销毁了");
+    debugPrint("FeedbackWallPageModel destroyed");
   }
 
   void refresh(){

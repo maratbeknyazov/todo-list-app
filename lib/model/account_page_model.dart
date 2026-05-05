@@ -43,7 +43,7 @@ class AccountPageModel extends ChangeNotifier {
   @override
   void dispose() {
     super.dispose();
-    debugPrint("AccountPageModel销毁了");
+    debugPrint("AccountPageModel destroyed");
   }
 
   void refresh() {

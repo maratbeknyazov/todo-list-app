@@ -77,6 +77,21 @@ class GlobalLogic{
     final list = await SharedUtil.instance.getStringList(Keys.currentLanguageCode);
     if (list == null) return;
     if (list == _model.currentLanguageCode) return;
+
+    // Проверяем, что загруженная локаль поддерживается (только en_US и ru_RU)
+    final supportedLocales = ['en_US', 'ru_RU'];
+    final localeString = '${list[0]}_${list[1]}';
+
+    if (!supportedLocales.contains(localeString)) {
+      // Если локаль не поддерживается (например, zh_CN), используем английский по умолчанию
+      _model.currentLanguageCode = ['en', 'US'];
+      _model.currentLanguage = 'English';
+      // Сохраняем исправленную локаль
+      await SharedUtil.instance.saveStringList(Keys.currentLanguageCode, ['en', 'US']);
+      await SharedUtil.instance.saveString(Keys.currentLanguage, 'English');
+      return;
+    }
+
     _model.currentLanguageCode = list;
   }
 
@@ -109,9 +124,8 @@ class GlobalLogic{
     final end = int.parse(times[1]);
     final time = DateTime.now();
     if(time.hour < start || time.hour > end){
-      final String languageCode = _model.currentLanguageCode[0];
       _model.currentThemeBean = ThemeBean(
-        themeName: languageCode == 'zh' ? '不见五指' : 'dark',
+        themeName: 'dark',
         colorBean: ColorBean.fromColor(MyThemeColor.darkColor),
         themeType: MyTheme.darkTheme,
       );
@@ -243,14 +257,26 @@ class GlobalLogic{
       controller.setFlag(LoadingFlag.success);
 
     },failed : (WeatherBean weatherBean){
+      debugPrint('Weather API failed: ${weatherBean.toString()}');
       controller.setFlag(LoadingFlag.error);
     }, error : (error){
+      debugPrint('Weather API error: $error');
+
+      // Если ошибка связана с подключением (эмулятор), показываем подсказку
+      if (error.toString().contains('timeout') || error.toString().contains('Connection')) {
+        debugPrint('⚠️ Совет: Эмулятор Android может не иметь доступа к интернету.');
+        debugPrint('💡 Попробуйте: 1) Перезапустить эмулятор 2) Использовать реальное устройство');
+        debugPrint('🔗 Или проверьте URL в браузере: https://api.openweathermap.org/data/2.5/weather?appid=64fdc6629209f1cd12ecd693f6ab090f&q=$position&units=metric&lang=en');
+      }
+
       controller.setFlag(LoadingFlag.error);
 
     }, params : {
-      "key": "d381a4276ed349daa3bf63646f12d8ae",
-      "location": position,
-      "lang":_model.currentLocale?.languageCode ?? 'en'
+      // OpenWeatherMap API параметры
+      "appid": "64fdc6629209f1cd12ecd693f6ab090f", // Ваш API ключ
+      "q": position, // Название города
+      "units": "metric", // Метрическая система (Цельсий)
+      "lang": _model.currentLocale?.languageCode ?? 'en'
     }, token: CancelToken());
   }
 

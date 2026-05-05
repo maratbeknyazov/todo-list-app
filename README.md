@@ -3,7 +3,9 @@
 
 ![image](https://user-images.githubusercontent.com/30992818/62850471-84b61880-bd15-11e9-80d7-e2ed87aee4fe.png)
 
-Language:[Русский](https://github.com/maratbeknyazov/todo-list-app/blob/master/README_RU.md)|[English](https://github.com/maratbeknyazov/todo-list-app/blob/master/README.md)
+Language: [Русский](README_RU.md) | [English](README.md)
+
+📚 **Documentation:** [Learning Path for Beginners](LEARNING_PATH.md)
 
 [![support](https://img.shields.io/badge/platform-flutter%7Cdart%20vm-ff69b4.svg?style=flat-square)](https://github.com/maratbeknyazov/todo-list-app)
 [![GitHub license](https://img.shields.io/github/license/maratbeknyazov/todo-list-app)](https://github.com/maratbeknyazov/todo-list-app/blob/master/LICENSE)

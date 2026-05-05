@@ -28,13 +28,14 @@ import 'package:todo_list/json/color_bean.dart';
 import 'package:todo_list/json/task_bean.dart';
 import 'package:todo_list/model/all_model.dart';
 import 'package:todo_list/utils/file_util.dart';
+import 'package:todo_list/utils/storage_helper.dart';
 import 'package:todo_list/utils/shared_util.dart';
 import 'package:todo_list/utils/theme_util.dart';
 import 'package:todo_list/widgets/edit_dialog.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:todo_list/widgets/net_loading_widget.dart';
-import 'package:todo_list/widgets/update_dialog.dart';
-import 'package:package_info_plus/package_info_plus.dart';
+// import 'package:todo_list/widgets/update_dialog.dart'; // Unused - update check disabled
+// import 'package:package_info_plus/package_info_plus.dart'; // Unused - update check disabled
 import 'package:cached_network_image/cached_network_image.dart';
 
 class MainPageLogic {
@@ -227,7 +228,7 @@ class MainPageLogic {
         final context = _model.context;
         if(context == null) return;
 
-        final token = await SharedUtil.instance.getString(Keys.token) ?? "";
+        final token = await StorageHelper.getToken() ?? "";
         showDialog(
             context: context,
             builder: (ctx) {
@@ -239,6 +240,7 @@ class MainPageLogic {
             _deleteDataBaseTask(taskBean);
           },
           failed: (CommonBean bean) {
+ 
             Navigator.of(context).pop();
             if (bean.description.contains("Задача не существует")) {
               _deleteDataBaseTask(taskBean);
@@ -457,7 +459,7 @@ class MainPageLogic {
     final context = _model.context;
     if(context == null) return;
 
-    final token = await SharedUtil.instance.getString(Keys.token) ?? "";
+    final token = await StorageHelper.getToken() ?? "";
     _showLoadingDialog(context);
     ApiService.instance.changeUserName(
       success: (bean) async {
@@ -498,46 +500,71 @@ class MainPageLogic {
     }));
   }
 
-  void checkUpdate(GlobalModel globalModel) {
-    if (Platform.isIOS) return;
+  void checkUpdate(GlobalModel globalModel) async {
+    // ОТКЛЮЧЕНО: Проверка обновлений временно отключена в режиме разработки
+    // TODO: Включить после настройки реального сервера обновлений в api_strategy.dart
+    // Замените baseUrl в api_strategy.dart на ваш реальный HTTPS сервер
+    return;
+
+    /* Закомментировано до настройки сервера обновлений
+    // Пропускаем проверку обновлений для iOS и Web
+    try {
+      if (Platform.isIOS) return;
+    } catch (e) {
+      // Web платформа не поддерживает Platform.isIOS - пропускаем проверку
+      return;
+    }
     final context = _model.context;
     if(context == null) return;
 
     CancelToken cancelToken = CancelToken();
-    ApiService.instance.checkUpdate(
-      success: (UpdateInfoBean updateInfo) async {
-        final packageInfo = await PackageInfo.fromPlatform();
-        bool needUpdate = UpdateInfoBean.needUpdate(
-            packageInfo.version, updateInfo.appVersion);
-        if (needUpdate) {
-          showDialog(
-              context: context,
-              builder: (ctx2) {
-                return UpdateDialog(
-                  version: updateInfo.appVersion,
-                  updateUrl: updateInfo.downloadUrl,
-                  updateInfo: updateInfo.updateInfo,
-                  updateInfoColor: globalModel.logic.getBgInDark(),
-                  backgroundColor:
-                      globalModel.logic.getPrimaryGreyInDark(context),
-                );
-              });
-        }
-      },
-      error: (msg) {},
-      params: {
-        "language": globalModel.currentLocale?.languageCode ?? "en",
-        "appId": "001"
-      },
-      token: cancelToken,
-    );
+
+    // Выполняем проверку обновлений асинхронно, не блокируя UI
+    try {
+      ApiService.instance.checkUpdate(
+        success: (UpdateInfoBean updateInfo) async {
+          try {
+            final packageInfo = await PackageInfo.fromPlatform();
+            bool needUpdate = UpdateInfoBean.needUpdate(
+                packageInfo.version, updateInfo.appVersion);
+            if (needUpdate && context.mounted) {
+              showDialog(
+                  context: context,
+                  builder: (ctx2) {
+                    return UpdateDialog(
+                      version: updateInfo.appVersion,
+                      updateUrl: updateInfo.downloadUrl,
+                      updateInfo: updateInfo.updateInfo,
+                      updateInfoColor: globalModel.logic.getBgInDark(),
+                      backgroundColor:
+                          globalModel.logic.getPrimaryGreyInDark(context),
+                    );
+                  });
+            }
+          } catch (e) {
+            debugPrint('Error checking package version: $e');
+          }
+        },
+        error: (msg) {
+          debugPrint('Update check error: $msg');
+        },
+        params: {
+          "language": globalModel.currentLocale?.languageCode ?? "en",
+          "appId": "001"
+        },
+        token: cancelToken,
+      );
+    } catch (e) {
+      debugPrint('Failed to initiate update check: $e');
+    }
+    */
   }
 
   /// Обновить задачу в облаке
   void postUpdateTask(TaskBean taskBean) async {
     final account = await SharedUtil.instance.getString(Keys.account);
     if (account == 'default') return;
-    final token = await SharedUtil.instance.getString(Keys.token);
+    final token = await StorageHelper.getToken();
     ApiService.instance.postUpdateTask(
       success: (CommonBean bean) {
         taskBean.needUpdateToCloud = 'false';
@@ -571,7 +598,7 @@ class MainPageLogic {
         builder: (ctx) {
           return NetLoadingWidget();
         });
-    final token = await SharedUtil.instance.getString(Keys.token) ?? "";
+    final token = await StorageHelper.getToken() ?? "";
     ApiService.instance.postCreateTask(
       success: (UploadTaskBean bean) {
         taskBean.needUpdateToCloud = 'false';

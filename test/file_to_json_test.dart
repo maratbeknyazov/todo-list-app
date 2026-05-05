@@ -3,7 +3,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:todo_list/utils/icon_utils.dart';
 
 void main() {
-//  test("\n测试获取类中变量\n", () {
+//  test("\nTest getting variables from class\n", () {
 //    File file = new File(
 //        "/Users/lichen/flutter/packages/flutter/lib/src/material/icons.dart");
 //    expect(true, file.existsSync());
@@ -14,7 +14,7 @@ void main() {
 //      final theNames = o.split(" = IconData(");
 //      names.add("\"${theNames[0]}\"");
 //    }
-//    print("结果：\n:${names}");
+//    print("Result:\n:${names}");
 //  });
 
 
@@ -26,10 +26,10 @@ void main() {
       '\"iconName\"': "\"$name\"",
       '\"matchTextDirection\"': "\"${icon.matchTextDirection}\""
     };
-    //把list转换为string的时候不要直接使用tostring，要用jsonEncode
+    //When converting list to string, don't use toString directly, use jsonEncode
   }
 
-  test("测试icondata转换", (){
+  test("Test icondata conversion", (){
     final list = IconUtil.getInstance().icons;
 //    print("icons:\n${list.toString()}");
 
@@ -37,11 +37,11 @@ void main() {
     List<Map<String, dynamic>> jsons = List.generate(list.length, (index){
       return toMap(list[index], IconUtil.getInstance().iconNames[index]);
     });
-   print("数据:\n$jsons");
+   print("Data:\n$jsons");
   });
 
 
-  test("本地json转换测试", (){
+  test("Local json conversion test", (){
 //    final data = IconBean.loadAsset();
 //    print("data:${data}");
 //    data.then((list){

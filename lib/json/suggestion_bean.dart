@@ -18,10 +18,11 @@ class SuggestionBean {
 
   static SuggestionBean fromMap(Map<String, dynamic> map) {
     SuggestionBean suggestionBean = new SuggestionBean();
-    suggestionBean.description = map['description'];
-    suggestionBean.status = map['status'];
-    suggestionBean.suggestions =
-        SuggestionsListBean.fromMapList(map['suggestions']);
+    suggestionBean.description = map['description'] as String? ?? '';
+    suggestionBean.status = map['status'] as int? ?? 0;
+    suggestionBean.suggestions = map['suggestions'] != null
+        ? SuggestionsListBean.fromMapList(map['suggestions'])
+        : [];
     return suggestionBean;
   }
 
@@ -55,13 +56,13 @@ class SuggestionsListBean {
 
   static SuggestionsListBean fromMap(Map<String, dynamic> map) {
     SuggestionsListBean suggestionsListBean = new SuggestionsListBean();
-    suggestionsListBean.account = map['account'] ?? '';
-    suggestionsListBean.suggestion = map['suggestion'] ?? '';
-    suggestionsListBean.connectWay = map['connect_way'] ?? '';
-    suggestionsListBean.avatarUrl = map['avatarUrl'] ?? '';
-    suggestionsListBean.userName = map['userName'] ?? '';
-    suggestionsListBean.time = map['time'] ?? '';
-    suggestionsListBean.id = map['id'];
+    suggestionsListBean.account = map['account'] as String? ?? '';
+    suggestionsListBean.suggestion = map['suggestion'] as String? ?? '';
+    suggestionsListBean.connectWay = map['connect_way'] as String? ?? '';
+    suggestionsListBean.avatarUrl = map['avatarUrl'] as String? ?? '';
+    suggestionsListBean.userName = map['userName'] as String? ?? '';
+    suggestionsListBean.time = map['time'] as String? ?? '';
+    suggestionsListBean.id = map['id'] as int? ?? 0;
     return suggestionsListBean;
   }
 

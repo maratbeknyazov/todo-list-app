@@ -4,19 +4,19 @@ import 'package:flutter_test/flutter_test.dart';
 
 mixin class Walker{
   void todo(){
-    print("\n我能走路\n");
+    print("\nI can walk\n");
   }
 }
 
 mixin class Pilot{
   void todo(){
-    print("\n我能飞\n");
+    print("\nI can fly\n");
   }
 }
 
 mixin class Jumper{
   void todo(){
-    print("\n我能跳\n");
+    print("\nI can jump\n");
   }
 }
 
@@ -39,7 +39,7 @@ class PersonThree with Walker, Pilot{
 }
 
 void main(){
-  test(("测试mixin机制:\n"), (){
+  test(("Test mixin mechanism:\n"), (){
 
     print(DateTime.now().millisecondsSinceEpoch);
 

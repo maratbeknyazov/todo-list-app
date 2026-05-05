@@ -101,8 +101,10 @@ class _BottomShowWidgetState extends State<BottomShowWidget>
                       showInitialAnimation: true,
                       children: List.generate(_children.length, (index) {
                         return IconButton(
-                          onPressed: () {
-                            doExit(context, _controller);
+                          onPressed: () async {
+                            widget.onExit?.call();
+                            await _controller.reverse();
+                            Navigator.of(context).pop();
                             Navigator.of(context).push(
                               new CupertinoPageRoute(
                                 builder: (ctx) {

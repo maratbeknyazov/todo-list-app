@@ -1,6 +1,6 @@
 import 'package:flutter_test/flutter_test.dart';
 
-//升级测试
+//Update test
 void main(){
 
 
@@ -25,7 +25,7 @@ void main(){
 
   }
 
-  test("测试版本号对比", (){
+  test("Test version number comparison", (){
 
     bool update1 = needUpdate("1.0.0", "1.0.0");
     bool update2 = needUpdate("1.0.0", "1.0.1");

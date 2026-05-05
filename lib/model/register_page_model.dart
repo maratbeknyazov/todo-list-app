@@ -59,7 +59,7 @@ class RegisterPageModel extends ChangeNotifier{
 //    formKey?.currentState?.dispose();
     disposeNode();
     super.dispose();
-    debugPrint("RegisterPageModel销毁了");
+    debugPrint("RegisterPageModel destroyed");
   }
 
   void disposeNode(){

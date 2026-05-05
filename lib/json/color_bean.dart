@@ -25,17 +25,18 @@ class ColorBean {
 
   static ColorBean fromMap(Map<String, dynamic> map) {
     ColorBean bean = new ColorBean();
-    bean.red =
-        map['red'] is int ? map['red'] as int : int.parse(map['red'] as String);
+    bean.red = map['red'] is int
+        ? map['red'] as int
+        : (map['red'] != null ? int.parse(map['red'] as String) : 0);
     bean.green = map['green'] is int
         ? map['green'] as int
-        : int.parse(map['green'] as String);
+        : (map['green'] != null ? int.parse(map['green'] as String) : 0);
     bean.blue = map['blue'] is int
         ? map['blue'] as int
-        : int.parse(map['blue'] as String);
+        : (map['blue'] != null ? int.parse(map['blue'] as String) : 0);
     bean.opacity = map['opacity'] is double
         ? map['opacity'] as double
-        : double.parse(map['opacity'] as String);
+        : (map['opacity'] != null ? double.parse(map['opacity'] as String) : 1.0);
     return bean;
   }
 

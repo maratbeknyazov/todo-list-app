@@ -11,8 +11,8 @@ class CommonBean {
 
   static CommonBean fromMap(Map<String, dynamic> map) {
     CommonBean commonBean = new CommonBean();
-    commonBean.description = map['description'] as String;
-    commonBean.status = map['status'] as int;
+    commonBean.description = map['description'] as String? ?? '';
+    commonBean.status = map['status'] as int? ?? 0;
     return commonBean;
   }
 

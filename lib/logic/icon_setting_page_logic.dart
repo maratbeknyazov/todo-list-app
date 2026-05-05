@@ -42,11 +42,11 @@ class IconSettingPageLogic {
                       iconBean: iconBean);
                   final data = jsonEncode(taskIconBean.toMap());
                   if (isEdit) {
-                    //如果不是新增而是编辑
+                    // If editing existing icon (not adding new)
                    SharedUtil.instance.readAndExchangeList(
                         Keys.taskIconBeans, data, index);
                   } else {
-                    //如果是新增
+                    // If adding new icon
                     final canAddMore = await SharedUtil.instance
                         .readAndSaveList(Keys.taskIconBeans, data);
                     if (!canAddMore) {

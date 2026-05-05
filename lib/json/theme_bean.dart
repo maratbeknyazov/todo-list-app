@@ -17,9 +17,11 @@ class ThemeBean {
 
   static ThemeBean fromMap(Map<String, dynamic> map) {
     ThemeBean bean = new ThemeBean();
-    bean.themeName = map['themeName'];
-    bean.colorBean = ColorBean.fromMap(map['colorBean']);
-    bean.themeType = map['themeType'];
+    bean.themeName = map['themeName'] as String?;
+    bean.colorBean = map['colorBean'] != null
+        ? ColorBean.fromMap(map['colorBean'] as Map<String, dynamic>)
+        : null;
+    bean.themeType = map['themeType'] as String?;
     return bean;
   }
 

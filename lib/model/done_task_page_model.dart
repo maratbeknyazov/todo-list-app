@@ -20,7 +20,7 @@ class DoneTaskPageModel extends ChangeNotifier{
   LoadingFlag loadingFlag = LoadingFlag.loading;
   List<TaskBean> doneTasks = [];
 
-  //当前点击到的已完成任务的index，方便再任务列表页面删除用的
+  // Index of the currently tapped completed task, used for deletion in the task list page
   int currentTapIndex = 0;
   bool _contextInitialized = false;
 
@@ -43,7 +43,7 @@ class DoneTaskPageModel extends ChangeNotifier{
   @override
   void dispose(){
     super.dispose();
-    debugPrint("DoneTaskPageModel销毁了");
+    debugPrint("DoneTaskPageModel destroyed");
   }
 
   void refresh(){

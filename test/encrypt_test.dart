@@ -6,13 +6,13 @@ import 'package:todo_list/utils/my_encrypt_util.dart';
 void main(){
 
 
-  test("加密测试", (){
+  test("Encryption test", (){
 
-    String text = 'Flutter真好用！';
+    String text = 'Flutter is really useful!';
     String encrypt = EncryptUtil.instance.encrypt(text);
-    print("加密后 :$encrypt");
+    print("After encryption: $encrypt");
     String decrypt = EncryptUtil.instance.decrypt(encrypt);
-    print("解密后 :$decrypt");
+    print("After decryption: $decrypt");
 
   });
 }

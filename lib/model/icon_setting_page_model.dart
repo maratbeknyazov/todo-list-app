@@ -12,13 +12,13 @@ class IconSettingPageModel extends ChangeNotifier {
   late IconSettingPageLogic logic;
   BuildContext? context;
 
-  ///当前已经选择出来的icon图标
+  /// Currently selected icon
   List<TaskIconBean> taskIcons = [];
 
-  ///展示在分割线下部分的所有icon图标
+  /// All icons displayed below the divider line
   List<IconBean> showIcons = [];
 
-  ///搜索出来的所有icon图标
+  /// All icons from search results
   List<IconBean> searchIcons = [];
   final TextEditingController textEditingController = TextEditingController();
   final FocusNode focusNode = FocusNode();
@@ -50,7 +50,7 @@ class IconSettingPageModel extends ChangeNotifier {
     textEditingController.dispose();
     focusNode.dispose();
     super.dispose();
-    debugPrint("IconSettingPageModel销毁了");
+    debugPrint("IconSettingPageModel destroyed");
   }
 
   void refresh() {

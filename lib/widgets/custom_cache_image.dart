@@ -17,14 +17,25 @@ class CustomCacheImage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    if(!url.startsWith('http')){
-      final file = File(url);
-      if(file.existsSync()){
-        return Image.file(file);
-      } else return SvgPicture.asset(
+    // Если URL пустой, показываем дефолтное изображение
+    if(url.isEmpty){
+      return SvgPicture.asset(
         "svgs/bg.svg",
         fit: BoxFit.cover,
       );
+    }
+
+    if(!url.startsWith('http')){
+      final file = File(url);
+      if(file.existsSync()){
+        return Image.file(file, fit: fit);
+      } else {
+        // Если локальный файл не найден, показываем дефолтное изображение
+        return SvgPicture.asset(
+          "svgs/bg.svg",
+          fit: BoxFit.cover,
+        );
+      }
     }
 
     return CachedNetworkImage(
@@ -38,10 +49,13 @@ class CustomCacheImage extends StatelessWidget {
               AlwaysStoppedAnimation<Color>(Theme.of(context).primaryColor),
         ),
       ),
-      errorWidget: (context, url, error) => Icon(
-        Icons.error,
-        color: Colors.redAccent,
-      ),
+      errorWidget: (context, url, error) {
+        // При ошибке загрузки показываем дефолтное изображение вместо иконки ошибки
+        return SvgPicture.asset(
+          "svgs/bg.svg",
+          fit: BoxFit.cover,
+        );
+      },
     );
   }
 }

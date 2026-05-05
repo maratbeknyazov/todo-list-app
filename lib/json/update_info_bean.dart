@@ -22,11 +22,11 @@ class UpdateInfoBean {
 
   static UpdateInfoBean fromMap(Map<String, dynamic> map) {
     UpdateInfoBean updateInfoBean = new UpdateInfoBean();
-    updateInfoBean.appVersion = map['appVersion'] as String;
-    updateInfoBean.appName = map['appName'] as String;
-    updateInfoBean.updateInfo = map['updateInfo'] as String;
-    updateInfoBean.downloadUrl = map['downloadUrl'] as String;
-    updateInfoBean.appId = map['appId'] as String;
+    updateInfoBean.appVersion = map['appVersion'] as String? ?? '';
+    updateInfoBean.appName = map['appName'] as String? ?? '';
+    updateInfoBean.updateInfo = map['updateInfo'] as String? ?? '';
+    updateInfoBean.downloadUrl = map['downloadUrl'] as String? ?? '';
+    updateInfoBean.appId = map['appId'] as String? ?? '';
     return updateInfoBean;
   }
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:todo_list/utils/storage_helper.dart';
 import 'package:todo_list/config/api_service.dart';
 import 'package:todo_list/config/api_strategy.dart';
 import 'package:todo_list/config/provider_config.dart';
@@ -7,6 +8,9 @@ import 'package:todo_list/i10n/localization_intl.dart';
 import 'package:todo_list/json/task_bean.dart';
 import 'package:todo_list/model/main_page_model.dart';
 import 'package:todo_list/utils/shared_util.dart';
+import 'package:todo_list/utils/secure_storage_util.dart';
+import 'package:todo_list/utils/password_util.dart';
+import 'package:todo_list/utils/my_encrypt_util.dart';
 
 class SynchronizeWidget extends StatefulWidget {
 
@@ -262,7 +266,7 @@ class _SynchronizeWidgetState extends State< SynchronizeWidget> {
     setState(() {
       synFlag = SynFlag.synchronizing;
     });
-    final token = await SharedUtil.instance.getString(Keys.token) ?? '';
+    final token = await StorageHelper.getToken() ?? '';
     for (var task in needSynTasks) {
       if(task.uniqueId.isEmpty) {
         uploadTask(task, token);
@@ -331,20 +335,36 @@ class _SynchronizeWidgetState extends State< SynchronizeWidget> {
       });
       return;
     }
-    final password = await SharedUtil.instance.getString(Keys.password);
+
+    // Читаем зашифрованный пароль из безопасного хранилища
+    final encryptedPassword = await SecureStorageUtil.instance.getString(Keys.password);
+    if(encryptedPassword == null) {
+      setState(() {
+        synFlag = SynFlag.noNeedSynced;
+      });
+      return;
+    }
+
+    // Расшифровываем пароль и хешируем для отправки на сервер
+    final password = EncryptUtil.instance.decrypt(encryptedPassword);
+    final hashedPassword = PasswordUtil.hashPassword(password);
+
     ApiService.instance.login(
       params: {
         "account": "$account",
-        "password": "$password"
+        "password": "$hashedPassword"
       },
-      success: (LoginBean loginBean) {
+      success: (LoginBean loginBean) async {
         loginSucceed = true;
 
         this.account = account;
         this.token = loginBean.token;
+
+        // Сохраняем токен в безопасное хранилище
+        await SecureStorageUtil.instance.saveString(Keys.token, loginBean.token);
+
         SharedUtil.instance.saveString(Keys.account, account).then((value){
           SharedUtil.instance.saveString(Keys.currentUserName, loginBean.username);
-          SharedUtil.instance.saveString(Keys.token, loginBean.token);
           SharedUtil.instance.saveBoolean(Keys.hasLogged, true);
           String cloudAvatarFileName = loginBean.avatarUrl.split("/").last;
           String localAvatarFileName = widget.mainPageModel.currentAvatarUrl.split("/").last;

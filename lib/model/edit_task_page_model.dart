@@ -27,16 +27,16 @@ class EditTaskPageModel extends ChangeNotifier{
   CancelToken cancelToken = CancelToken();
 
 
-  ///任务清单
+  /// Task checklist
   List<TaskDetailBean> taskDetails = [];
-  ///截止日期
+  /// Deadline
   DateTime? deadLine;
-  ///开始日期
+  /// Start date
   DateTime? startDate;
-  
-  ///创建日期
+
+  /// Creation date
   DateTime? createDate;
-  ///结束日期
+  /// Finish date
   DateTime? finishDate;
 
   TaskIconBean? taskIcon;
@@ -46,10 +46,10 @@ class EditTaskPageModel extends ChangeNotifier{
   ColorBean? textColorBean;
   String? backgroundUrl;
 
-  ///能否添加一项任务
+  /// Whether a task detail can be added
   bool canAddTaskDetail = false;
 
-  ///当这个值不为空的时候，表示不是新增一个task，而是编辑已存在的task
+  /// When this value is not null, it indicates editing an existing task rather than creating a new one
   TaskBean? oldTaskBean;
 
   EditTaskPageModel({this.oldTaskBean}){
@@ -74,7 +74,7 @@ class EditTaskPageModel extends ChangeNotifier{
     scrollController.dispose();
     if(!cancelToken.isCancelled) cancelToken.cancel();
     SystemChannels.textInput.invokeMethod('TextInput.hide');
-    debugPrint("EditTaskPageModel销毁了");
+    debugPrint("EditTaskPageModel destroyed");
   }
 
   void refresh(){

@@ -1,4 +1,5 @@
 // ============================================================================
+import 'package:todo_list/utils/storage_helper.dart';
 // ШАГ 2: LOGIC (Бизнес-логика)
 // ============================================================================
 // SearchPageLogic - логика поиска задач
@@ -128,7 +129,7 @@ class SearchPageLogic{
       if(taskBean.uniqueId.isEmpty){
         doDelete(taskBean, globalModel);
       } else {
-        final token = await SharedUtil.instance.getString(Keys.token) ?? "";
+        final token = await StorageHelper.getToken() ?? "";
         showDialog(context: context, builder: (ctx){
           return NetLoadingWidget();
         });

@@ -21,7 +21,7 @@ class SearchPageModel extends ChangeNotifier{
   final TextEditingController textEditingController = TextEditingController();
   bool isSearching = false;
   LoadingFlag loadingFlag = LoadingFlag.idle;
-  //当前点击进入详情页的index，方便在详情页里面操作删除、更新等
+  // Index of the currently tapped item entering detail page, used for operations like delete and update in detail page
   int currentTapIndex = 0;
 
   CancelToken cancelToken = CancelToken();
@@ -35,7 +35,7 @@ class SearchPageModel extends ChangeNotifier{
     if(this.context == null){
       this.context = context;
       this._globalModel = globalModel;
-      debugPrint("设置global");
+      debugPrint("Setting global");
     }
   }
 
@@ -46,7 +46,7 @@ class SearchPageModel extends ChangeNotifier{
     if(!cancelToken.isCancelled) cancelToken.cancel();
     super.dispose();
     _globalModel?.searchPageModel = null;
-    debugPrint("SearchPageModel销毁了");
+    debugPrint("SearchPageModel destroyed");
   }
 
   void refresh(){

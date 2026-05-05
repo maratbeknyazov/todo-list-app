@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:todo_list/utils/storage_helper.dart';
 
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -104,7 +105,7 @@ class AvatarPageLogic {
       if(account == "default" || account == null){
         await _saveImageData(newFile.path);
       } else{
-        final token = await SharedUtil.instance.getString(Keys.token);
+        final token = await StorageHelper.getToken();
         if(token == null) return;
 
         final path = newFile.path;

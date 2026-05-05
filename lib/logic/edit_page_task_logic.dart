@@ -1,4 +1,5 @@
 // ============================================================================
+import 'package:todo_list/utils/storage_helper.dart';
 // ШАГ 2: LOGIC (Бизнес-логика)
 // ============================================================================
 // Этот файл - ЛОГИКА редактирования задач. Пишется ПОСЛЕ моделей и базы данных.
@@ -382,7 +383,7 @@ class EditTaskPageLogic {
     showDialog(context: context, builder: (ctx){
       return NetLoadingWidget();
     });
-    final token = await SharedUtil.instance.getString(Keys.token);
+    final token = await StorageHelper.getToken();
     ApiService.instance.postCreateTask(
       success: (UploadTaskBean bean){
         taskBean.uniqueId = bean.uniqueId;
@@ -416,7 +417,7 @@ class EditTaskPageLogic {
     showDialog(context: context, builder: (ctx){
       return NetLoadingWidget();
     });
-    final token = await SharedUtil.instance.getString(Keys.token);
+    final token = await StorageHelper.getToken();
     ApiService.instance.postUpdateTask(
       success: (CommonBean bean){
         taskBean.needUpdateToCloud = 'false';

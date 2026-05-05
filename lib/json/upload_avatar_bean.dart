@@ -18,9 +18,9 @@ class UploadAvatarBean {
 
   static UploadAvatarBean fromMap(Map<String, dynamic> map) {
     UploadAvatarBean uploadAvatarBean = new UploadAvatarBean();
-    uploadAvatarBean.description = map['description'] as String;
-    uploadAvatarBean.filePath = map['filePath'] as String;
-    uploadAvatarBean.status = map['status'] as int;
+    uploadAvatarBean.description = map['description'] as String? ?? '';
+    uploadAvatarBean.filePath = map['filePath'] as String? ?? '';
+    uploadAvatarBean.status = map['status'] as int? ?? 0;
     return uploadAvatarBean;
   }
 

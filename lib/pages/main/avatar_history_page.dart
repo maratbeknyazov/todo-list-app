@@ -1,4 +1,5 @@
 import 'dart:io';
+import 'package:todo_list/utils/storage_helper.dart';
 
 import 'package:flutter/material.dart';
 import 'package:todo_list/config/api_service.dart';
@@ -83,7 +84,7 @@ class _AvatarHistoryPageState extends State<AvatarHistoryPage> {
                       await onAvatarSelect(path, context);
                     } else {
                       final token =
-                          await SharedUtil.instance.getString(Keys.token);
+                          await StorageHelper.getToken();
                       String fileName = path
                           .substring(path.lastIndexOf("/") + 1, path.length)
                           .replaceAll(" ", "");

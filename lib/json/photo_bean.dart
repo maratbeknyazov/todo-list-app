@@ -35,17 +35,21 @@ class PhotoBean {
 
   static PhotoBean fromMap(Map<String, dynamic> map) {
     PhotoBean photoBean = new PhotoBean();
-    photoBean.id = map['id'] as String;
-    photoBean.createdAt = map['created_at'] as String;
-    photoBean.updatedAt = map['updated_at'] as String;
-    photoBean.color = map['color'] as String;
-    photoBean.sponsored = map['sponsored'] as bool;
-    photoBean.likedByUser = map['liked_by_user'] as bool;
-    photoBean.width = map['width'] as int;
-    photoBean.height = map['height'] as int;
-    photoBean.likes = map['likes'] as int;
-    photoBean.links = LinksBean.fromMap(map['links'] as Map<String, dynamic>);
-    photoBean.urls = UrlsBean.fromMap(map['urls'] as Map<String, dynamic>);
+    photoBean.id = map['id'] as String? ?? '';
+    photoBean.createdAt = map['created_at'] as String? ?? '';
+    photoBean.updatedAt = map['updated_at'] as String? ?? '';
+    photoBean.color = map['color'] as String? ?? '';
+    photoBean.sponsored = map['sponsored'] as bool? ?? false;
+    photoBean.likedByUser = map['liked_by_user'] as bool? ?? false;
+    photoBean.width = map['width'] as int? ?? 0;
+    photoBean.height = map['height'] as int? ?? 0;
+    photoBean.likes = map['likes'] as int? ?? 0;
+    photoBean.links = map['links'] != null
+        ? LinksBean.fromMap(map['links'] as Map<String, dynamic>)
+        : LinksBean.fromMap({});
+    photoBean.urls = map['urls'] != null
+        ? UrlsBean.fromMap(map['urls'] as Map<String, dynamic>)
+        : UrlsBean.fromMap({});
     return photoBean;
   }
 
@@ -95,13 +99,13 @@ class LinksBean {
 
   static LinksBean fromMap(Map<String, dynamic> map) {
     LinksBean linksBean = new LinksBean();
-    linksBean.self = map['self'] as String;
-    linksBean.html = map['html'] as String;
-    linksBean.photos = map['photos'] as String;
-    linksBean.likes = map['likes'] as String;
-    linksBean.portfolio = map['portfolio'] as String;
-    linksBean.following = map['following'] as String;
-    linksBean.followers = map['followers'] as String;
+    linksBean.self = map['self'] as String? ?? '';
+    linksBean.html = map['html'] as String? ?? '';
+    linksBean.photos = map['photos'] as String? ?? '';
+    linksBean.likes = map['likes'] as String? ?? '';
+    linksBean.portfolio = map['portfolio'] as String? ?? '';
+    linksBean.following = map['following'] as String? ?? '';
+    linksBean.followers = map['followers'] as String? ?? '';
     return linksBean;
   }
 
@@ -143,11 +147,11 @@ class UrlsBean {
 
   static UrlsBean fromMap(Map<String, dynamic> map) {
     UrlsBean urlsBean = new UrlsBean();
-    urlsBean.raw = map['raw'] as String;
-    urlsBean.full = map['full'] as String;
-    urlsBean.regular = map['regular'] as String;
-    urlsBean.small = map['small'] as String;
-    urlsBean.thumb = map['thumb'] as String;
+    urlsBean.raw = map['raw'] as String? ?? '';
+    urlsBean.full = map['full'] as String? ?? '';
+    urlsBean.regular = map['regular'] as String? ?? '';
+    urlsBean.small = map['small'] as String? ?? '';
+    urlsBean.thumb = map['thumb'] as String? ?? '';
     return urlsBean;
   }
 
@@ -207,21 +211,25 @@ class UserBean {
 
   static UserBean fromMap(Map<String, dynamic> map) {
     UserBean userBean = new UserBean();
-    userBean.id = map['id'];
-    userBean.updatedAt = map['updated_at'];
-    userBean.username = map['username'];
-    userBean.name = map['name'];
-    userBean.firstName = map['first_name'];
-    userBean.lastName = map['last_name'];
-    userBean.portfolioUrl = map['portfolio_url'];
-    userBean.bio = map['bio'];
-    userBean.instagramUsername = map['instagram_username'];
-    userBean.acceptedTos = map['accepted_tos'];
-    userBean.totalCollections = map['total_collections'];
-    userBean.totalLikes = map['total_likes'];
-    userBean.totalPhotos = map['total_photos'];
-    userBean.links = LinksBean.fromMap(map['links']);
-    userBean.profileImage = ProfileImageBean.fromMap(map['profile_image']);
+    userBean.id = map['id'] as String? ?? '';
+    userBean.updatedAt = map['updated_at'] as String? ?? '';
+    userBean.username = map['username'] as String? ?? '';
+    userBean.name = map['name'] as String? ?? '';
+    userBean.firstName = map['first_name'] as String? ?? '';
+    userBean.lastName = map['last_name'] as String? ?? '';
+    userBean.portfolioUrl = map['portfolio_url'] as String? ?? '';
+    userBean.bio = map['bio'] as String? ?? '';
+    userBean.instagramUsername = map['instagram_username'] as String? ?? '';
+    userBean.acceptedTos = map['accepted_tos'] as bool? ?? false;
+    userBean.totalCollections = map['total_collections'] as int? ?? 0;
+    userBean.totalLikes = map['total_likes'] as int? ?? 0;
+    userBean.totalPhotos = map['total_photos'] as int? ?? 0;
+    userBean.links = map['links'] != null
+        ? LinksBean.fromMap(map['links'] as Map<String, dynamic>)
+        : LinksBean.fromMap({});
+    userBean.profileImage = map['profile_image'] != null
+        ? ProfileImageBean.fromMap(map['profile_image'] as Map<String, dynamic>)
+        : ProfileImageBean.fromMap({});
     return userBean;
   }
 
@@ -247,9 +255,9 @@ class ProfileImageBean {
 
   static ProfileImageBean fromMap(Map<String, dynamic> map) {
     ProfileImageBean profileImageBean = new ProfileImageBean();
-    profileImageBean.small = map['small'];
-    profileImageBean.medium = map['medium'];
-    profileImageBean.large = map['large'];
+    profileImageBean.small = map['small'] as String? ?? '';
+    profileImageBean.medium = map['medium'] as String? ?? '';
+    profileImageBean.large = map['large'] as String? ?? '';
     return profileImageBean;
   }
 

@@ -9,10 +9,14 @@ typedef ApiErrorCallback = void Function(String errorMessage);
 class ApiStrategy {
   static ApiStrategy? _instance;
 
-  static final String baseUrl = "http://42.194.193.85/oldchen/";
-//  static final String baseUrl = "http://192.168.137.1:8080/";
-  static const Duration connectTimeOut = Duration(seconds: 10); //Время ожидания подключения 10 секунд
-  static const Duration receiveTimeOut = Duration(seconds: 15); //Время ожидания ответа 15 секунд
+  // TODO: Замените на ваш HTTPS сервер после покупки
+  // Пример: static final String baseUrl = "https://your-domain.com/api/";
+  static final String baseUrl = "https://localhost:8080/"; // Временный placeholder
+
+  // Старый китайский сервер (удалён для безопасности):
+  // static final String baseUrl = "http://42.194.193.85/oldchen/";
+  static const Duration connectTimeOut = Duration(seconds: 15); //Время ожидания подключения 15 секунд
+  static const Duration receiveTimeOut = Duration(seconds: 20); //Время ожидания ответа 20 секунд
 
   late final Dio _client;
 

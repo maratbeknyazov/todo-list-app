@@ -19,16 +19,19 @@ class TaskIconBean {
 
   TaskIconBean({String? taskName, IconBean? iconBean, ColorBean? colorBean}) {
     this.taskName = taskName ?? '';
-    this.iconBean = iconBean!;
-    this.colorBean = colorBean!;
+    this.iconBean = iconBean ?? IconBean();
+    this.colorBean = colorBean ?? ColorBean();
   }
 
   static TaskIconBean fromMap(Map<String, dynamic> map) {
     TaskIconBean bean = new TaskIconBean();
-    bean.taskName = map['taskName'] as String;
-    bean.colorBean =
-        ColorBean.fromMap(map['colorBean'] as Map<String, dynamic>);
-    bean.iconBean = IconBean.fromMap(map['iconBean'] as Map<String, dynamic>);
+    bean.taskName = map['taskName'] as String? ?? '';
+    bean.colorBean = map['colorBean'] != null
+        ? ColorBean.fromMap(map['colorBean'] as Map<String, dynamic>)
+        : ColorBean();
+    bean.iconBean = map['iconBean'] != null
+        ? IconBean.fromMap(map['iconBean'] as Map<String, dynamic>)
+        : IconBean();
     return bean;
   }
 
@@ -78,7 +81,7 @@ class IconBean {
     IconBean bean = new IconBean();
     bean.codePoint = map['codePoint'] is int
         ? map['codePoint'] as int
-        : int.parse(map['codePoint'] as String);
+        : (map['codePoint'] != null ? int.parse(map['codePoint'] as String) : 0);
     bean.fontFamily = map['fontFamily'] as String? ?? '';
     bean.fontPackage = map['fontPackage'] as String? ?? '';
     bean.iconName = map['iconName'] as String? ?? '';

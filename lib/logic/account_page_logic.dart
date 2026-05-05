@@ -63,18 +63,19 @@ class AccountPageLogic{
     );
   }
 
-  void onLogoutPressed(){
+  void onLogoutPressed() async {
     if(_model.context == null) return;
 
-    SharedUtil.instance
-        .saveString(Keys.account, "default")
-        .then((v) {
-      SharedUtil.instance
-          .saveBoolean(Keys.hasLogged, false);
-    });
+    // Сохраняем данные о выходе и ждем завершения
+    await SharedUtil.instance.saveString(Keys.account, "default");
+    await SharedUtil.instance.saveBoolean(Keys.hasLogged, false);
 
+    // Проверяем, что контекст все еще валиден после async операций
+    if(_model.context == null || !_model.context!.mounted) return;
+
+    // Используем Navigator с проверкой контекста
     Navigator.of(_model.context!).pushAndRemoveUntil(
-        new MaterialPageRoute(builder: (context) {
+        MaterialPageRoute(builder: (context) {
           return ProviderConfig.getInstance()
               .getLoginPage(isFirst: true);
         }), (router) => false);

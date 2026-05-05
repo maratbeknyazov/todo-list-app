@@ -13,8 +13,8 @@ class ResetPasswordPageModel extends ChangeNotifier {
   late ResetPasswordPageLogic logic;
   BuildContext? context;
 
-  ///true表示重新设置密码，false表示忘记密码
-  ///前者需要用到[oldPassword],后者需要用到[verifyCode]
+  /// true indicates resetting password, false indicates forgot password
+  /// The former requires [oldPassword], the latter requires [verifyCode]
   late bool isReset;
 
   String emailAccount = "";
@@ -72,7 +72,7 @@ class ResetPasswordPageModel extends ChangeNotifier {
     cancelToken.cancel();
     disposeNode();
     super.dispose();
-    debugPrint("ResetPasswordPageModel销毁了");
+    debugPrint("ResetPasswordPageModel destroyed");
   }
 
 

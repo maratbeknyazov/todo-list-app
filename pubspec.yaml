@@ -37,7 +37,8 @@ dependencies:
   # Кэширование изображений
   cached_network_image: ^3.4.1
   # Выбор изображений
-  image_picker: ^1.1.2
+  image_picker: ^1.2.2
+  image_picker_android: ^0.8.13+17
   # Запрос разрешений
   permission_handler: ^12.0.1
   # Получение путей к файлам
@@ -63,6 +64,10 @@ dependencies:
   # lottie: ^3.3.2
   # Шифрование
   encrypt: ^5.0.3
+  # Безопасное хранилище для паролей и токенов
+  flutter_secure_storage: ^9.2.2
+  # Хеширование паролей
+  crypto: ^3.0.6
   # Анимация списков
   flutter_staggered_animations: ^1.1.1
   # Выбор с помощью прокрутки (Picker)

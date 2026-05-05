@@ -43,7 +43,7 @@ class FeedbackPageModel extends ChangeNotifier{
   void dispose(){
     cancelToken.cancel();
     super.dispose();
-    debugPrint("FeedbackPageModel销毁了");
+    debugPrint("FeedbackPageModel destroyed");
   }
 
   void refresh(){

@@ -74,8 +74,11 @@ class MainPageModel extends ChangeNotifier {
   void setContext(BuildContext context, {required GlobalModel globalModel}) {
     if (this.context == null) {
       this.context = context;
-      logic.checkUpdate(globalModel);
       this._globalModel = globalModel;
+
+      // Запускаем проверку обновлений асинхронно, чтобы не блокировать UI
+      Future.microtask(() => logic.checkUpdate(globalModel));
+
       logic.getAvatarType().then((value) {
         Future.wait(
           [
@@ -86,14 +89,20 @@ class MainPageModel extends ChangeNotifier {
             logic.getEnableCardPageOpacity(),
           ],
         ).then((value) {
-          refresh();
+          // Проверяем, что модель не была уничтожена перед вызовом refresh
+          if (!_disposed) {
+            refresh();
+          }
         });
       });
     }
   }
 
+  bool _disposed = false;
+
   @override
   void dispose() {
+    _disposed = true;
     super.dispose();
     if(!cancelToken.isCancelled) cancelToken.cancel();
     _globalModel?.mainPageModel = null;

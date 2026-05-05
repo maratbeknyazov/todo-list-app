@@ -5,7 +5,7 @@ void main(){
 
 
 
-  //求三角形a边对应的角度
+  //Calculate the angle corresponding to side a of a triangle
   double getAngle(double a,double b, double c){
     double numerator = (pow(b,2) + pow(c,2) - pow(a,2)).toDouble();
     double denominator = 2 * b * c;
@@ -13,7 +13,7 @@ void main(){
     return angle;
   }
 
-  //求两坐标之间的距离
+  //Calculate the distance between two coordinates
   double getDistance(Offset one, Offset two){
     double deltaX = one.dx - two.dx;
     double deltaY = one.dy - two.dy;
@@ -22,21 +22,21 @@ void main(){
     return distance;
   }
 
-  test("\n测试圆求角度\n", (){
+  test("\nTest circle angle calculation\n", (){
 
 
     double angle = getAngle(sqrt(2), sqrt(2), 2);
-    print("角度:$angle");
+    print("Angle: $angle");
 
     double distance = getDistance(Offset(0, sqrt(2)), Offset(sqrt(2), 0));
-    print("长度:$distance");
+    print("Length: $distance");
 
 
 
   });
 
 
-  test(("测试"), (){
+  test(("Test"), (){
 
     final a = 20 / 20;
     final b = 40 / 20;

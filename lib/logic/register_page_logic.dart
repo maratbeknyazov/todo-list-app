@@ -14,6 +14,8 @@ import 'package:todo_list/i10n/localization_intl.dart';
 import 'package:todo_list/model/all_model.dart';
 import 'package:todo_list/utils/my_encrypt_util.dart';
 import 'package:todo_list/utils/shared_util.dart';
+import 'package:todo_list/utils/password_util.dart';
+import 'package:todo_list/utils/secure_storage_util.dart';
 import 'package:todo_list/widgets/net_loading_widget.dart';
 
 class RegisterPageLogic{
@@ -146,20 +148,28 @@ class RegisterPageLogic{
   }
 
   void _registerEmail(RegisterPageModel model, BuildContext context) {
-       final encryptPassword = EncryptUtil.instance.encrypt(model.password);
+    // Хешируем пароль перед отправкой на сервер (SHA-256)
+    final hashedPassword = PasswordUtil.hashPassword(model.password);
+
+    // Шифруем пароль для локального хранения (AES)
+    final encryptPassword = EncryptUtil.instance.encrypt(model.password);
+
     ApiService.instance.postRegister(
       params: {
         "account": model.email,
-        "password": encryptPassword,
+        "password": hashedPassword, // Отправляем хешированный пароль
         "accountType": "0",
         "username": model.userName,
         "identifyCode": model.verifyCode,
       },
-      success: (RegisterBean bean){
+      success: (RegisterBean bean) async {
+        // Сохраняем чувствительные данные в безопасное хранилище
+        await SecureStorageUtil.instance.saveString(Keys.password, encryptPassword);
+        await SecureStorageUtil.instance.saveString(Keys.token, bean.token);
+
+        // Обычные данные сохраняем в SharedPreferences
         SharedUtil.instance.saveString(Keys.account, model.email).then((value){
-          SharedUtil.instance.saveString(Keys.password, encryptPassword);
           SharedUtil.instance.saveString(Keys.currentUserName, model.userName);
-          SharedUtil.instance.saveString(Keys.token, bean.token);
           SharedUtil.instance.saveBoolean(Keys.hasLogged, true);
           SharedUtil.instance.saveString(Keys.netAvatarPath, ApiStrategy.baseUrl + bean.avatarUrl);
           SharedUtil.instance.saveInt(Keys.currentAvatarType, CurrentAvatarType.net);

@@ -33,7 +33,7 @@ class ThemePageModel extends ChangeNotifier{
   @override
   void dispose(){
     super.dispose();
-    debugPrint("ThemePageModel销毁了");
+    debugPrint("ThemePageModel destroyed");
   }
 
   void refresh(){

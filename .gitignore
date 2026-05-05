@@ -1,31 +1,116 @@
-.dart_tool/pub/bin/sdk-version
-.dart_tool/pub/bin/intl_translation/extract_to_arb.dart.snapshot.dart2
-.dart_tool/pub/bin/intl_translation/generate_from_arb.dart.snapshot.dart2
-.dart_tool/pub/bin/intl_translation/make_examples_const.dart.snapshot.dart2
-.dart_tool/pub/bin/intl_translation/rewrite_intl_messages.dart.snapshot.dart2
-.dart_tool/pub/bin/test/test.dart.snapshot.dart2
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+.atom/
+.buildlog/
+.history
+.svn/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
 .idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
 .flutter-plugins
+.flutter-plugins-dependencies
 .packages
+.pub-cache/
+.pub/
+/build/
 pubspec.lock
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+# Android related
 android/local.properties
-android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
-ios/Flutter/Generated.xcconfig
 android/.gradle/
-build/
 android/gradlew
 android/gradlew.bat
-
-.dart_tool/
-
-flutter_01.skp
-flutter_02.skp
-flutter_03.skp
-flutter_04.skp
-
-flutter_export_environment.sh
-flutter_01.log
-flutter_02.log
-.flutter-plugins-dependencies
-Flutter.podspec
 android/android.iml
+android/app/src/main/java/io/flutter/plugins/GeneratedPluginRegistrant.java
+android/.settings/
+android/app/.settings/
+android/.classpath
+android/.project
+android/app/.classpath
+android/app/.project
+android/build/
+android/app/bin/
+android/.cxx/
+android/captures/
+*.apk
+*.ap_
+*.dex
+
+# iOS related
+ios/Flutter/Generated.xcconfig
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+ios/.symlinks/
+ios/Pods/
+ios/.generated/
+ios/Flutter/App.framework
+ios/Flutter/Flutter.framework
+ios/ServiceDefinitions.json
+ios/Runner/GeneratedPluginRegistrant.*
+
+# Web related
+/web/*.js
+/web/*.js.map
+
+# Windows related
+windows/flutter/generated_plugin_registrant.cc
+windows/flutter/generated_plugin_registrant.h
+windows/flutter/generated_plugins.cmake
+
+# macOS related
+macos/Flutter/GeneratedPluginRegistrant.swift
+macos/Flutter/ephemeral/
+
+# Linux related
+linux/flutter/generated_plugin_registrant.cc
+linux/flutter/generated_plugin_registrant.h
+linux/flutter/generated_plugins.cmake
+
+# Coverage
+coverage/
+
+# Exceptions to above rules
+!/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+!/dev/ci/**/Gemfile.lock
+
+# Claude Code related
+.claude/
+
+# Signing keys (security)
+android/key.properties
+android/*.jks
+android/*.keystore
+
+# Flutter logs and temp files
+flutter_*.skp
+flutter_*.log
+flutter_export_environment.sh
